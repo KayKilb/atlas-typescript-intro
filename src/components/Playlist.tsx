@@ -17,7 +17,7 @@ interface Song {
 
 const Playlist: React.FC<PlaylistProps> = ({ playlist, currentSong, onSongSelect }) => {
   return (
-    <div className="playlist">
+    <div className="playlist space-y-2 max-h-screen overflow-y-auto">
       {playlist.map((item) => (
         <PlayListItem
           key={item.id}
