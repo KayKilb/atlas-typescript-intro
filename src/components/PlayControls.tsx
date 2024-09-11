@@ -46,7 +46,7 @@ const PlayControls: React.FC<PlayControlsProps> = ({
     <div className="flex items-center justify-between w-full h-[63px] bg-gray-100 p-4 rounded-lg">
       {/* Speed Button */}
       <button
-        className="text-gray-400 hover:text-gray-700"
+        className="text-fuchsia-500 hover:text-fuchsia-700"
         onClick={handleSpeedToggle}
       >
         {speed}x
@@ -54,18 +54,18 @@ const PlayControls: React.FC<PlayControlsProps> = ({
 
       {/* Back Button */}
       <button
-        className="p-2 rounded-full bg-gray-200 hover:bg-gray-300"
+        className="p-2 rounded-full bg-fuchsia-200 hover:bg-fuchsia-300"
         onClick={onPrevious}
         disabled={isFirstSong}
       >
         <BackwardIcon
-          className={`h-5 w-5 ${isFirstSong ? 'text-gray-400' : 'text-gray-600'}`}
+          className={`h-5 w-5 ${isFirstSong ? 'text-fuchsia-400' : 'text-fuchsia-600'}`}
         />
       </button>
 
       {/* Play/Pause Button */}
       <button
-        className="p-3 rounded-full bg-black hover:bg-gray-800"
+        className="p-3 rounded-full bg-fuchsia-500 hover:bg-fuchsia-700"
         onClick={handlePlayPause}
       >
         {isPlaying ? (
@@ -77,21 +77,21 @@ const PlayControls: React.FC<PlayControlsProps> = ({
 
       {/* Forward Button */}
       <button
-        className="p-2 rounded-full bg-gray-200 hover:bg-gray-300"
+        className="p-2 rounded-full bg-fuchsia-200 hover:bg-fuchsia-300"
         onClick={onNext}
         disabled={isLastSong}
       >
         <ForwardIcon
-          className={`h-5 w-5 ${isLastSong ? 'text-gray-400' : 'text-gray-600'}`}
+          className={`h-5 w-5 ${isLastSong ? 'text-fuchsia-400' : 'text-fuchsia-600'}`}
         />
       </button>
 
       {/* Shuffle Button */}
       <button
-        className={`p-2 rounded-full ${isShuffle ? 'bg-purple-500' : 'bg-gray-200'} hover:bg-gray-300`}
+        className={`p-2 rounded-full ${isShuffle ? 'bg-fuchsia-500' : 'bg-fuchsia-200'} hover:bg-fuchsia-300`}
         onClick={handleShuffleToggle}
       >
-        <ArrowPathRoundedSquareIcon className="h-5 w-5 text-gray-600" />
+        <ArrowPathRoundedSquareIcon className="h-5 w-5 text-fuchsia-600" />
       </button>
     </div>
   );
