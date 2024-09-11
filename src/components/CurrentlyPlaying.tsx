@@ -3,7 +3,7 @@ import CoverArt from './CoverArt';
 import SongTitle from './SongTitle';
 import PlayControls from './PlayControls';
 import VolumeControl from './VolumeControl';
-import placeholder from '../assets/placeholder.svg';
+import placeholder from '../assets/placeholder.jpg';
 
 export default function CurrentlyPlaying() {
   return (
