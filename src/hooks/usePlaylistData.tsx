@@ -1,3 +1,4 @@
+//usePlaylistData.tsx
 import { useState, useEffect } from 'react';
 
 interface Song {
@@ -5,6 +6,7 @@ interface Song {
   title: string;
   genre: string;
   length: string;
+  cover: string;
 }
 
 export const usePlaylistData = () => {

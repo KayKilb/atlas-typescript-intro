@@ -1,3 +1,4 @@
+//PlayListItem.tsx
 import React from 'react';
 
 interface PlayListItemProps {
@@ -11,6 +12,7 @@ interface Song {
   title: string;
   genre: string;
   length: string;
+  artist: string;
 }
 
 const PlayListItem: React.FC<PlayListItemProps> = ({ song, isSelected, onClick }) => {

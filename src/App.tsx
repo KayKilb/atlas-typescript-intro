@@ -1,5 +1,6 @@
+//App.tsx
 import React from 'react';
-import MusicPlayer from './MusicPlayer';
+import MusicPlayer from './components/MusicPlayer';
 import Footer from './components/Footer';
 
 function App() {

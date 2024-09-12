@@ -1,12 +1,14 @@
+//MusicPlayer.tsx
 import React, { useEffect, useState, useCallback } from 'react';
-import CurrentlyPlaying from './components/CurrentlyPlaying';
-import Playlist from './components/Playlist';
+import CurrentlyPlaying from './CurrentlyPlaying';
+import Playlist from './Playlist';
 
 interface Song {
   id: number;
   title: string;
   genre: string;
   length: string;
+  artist: string;
 }
 
 const MusicPlayer: React.FC = () => {
@@ -52,9 +54,17 @@ const MusicPlayer: React.FC = () => {
     <div className="music-player flex flex-col lg:flex-row gap-4 h-full max-w-7xl mx-auto p-4">
       {/* Currently Playing Section */}
       <div className="flex-1 bg-white rounded-lg shadow-md overflow-hidden relative min-h-[630px] lg:min-h-0">
-        {currentSong && <CurrentlyPlaying song={currentSong} />}
+        {currentSong && <CurrentlyPlaying
+        song={currentSong}
+        onPlayPause={() => {handlePlayPause}}
+        onBack={() => { /* Implement previous song logic here */ }}
+        onSkip={getNextSong}  // Utilize the existing function
+        isPlaying={/* Implement logic to determine playing state */}
+        volume={volume}
+        onVolumeChange={(newVolume) => { /* Implement volume change logic here */ }}
+        playlist={playlist}
+      />
       </div>
-
       {/* Playlist Section */}
       <div className="flex-1 bg-[#FFE3FD] rounded-lg shadow-md overflow-hidden p-4">
         <h2 className="text-2xl font-bold mb-4">Playlist</h2>
@@ -64,7 +74,6 @@ const MusicPlayer: React.FC = () => {
           onSongSelect={handleSongChange}
         />
       </div>
-    </div>
   );
 };
 

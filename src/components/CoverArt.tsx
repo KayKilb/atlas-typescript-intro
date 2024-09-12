@@ -1,3 +1,4 @@
+//CoverArt.tsx
 import React from 'react';
 
 interface CoverArtProps {

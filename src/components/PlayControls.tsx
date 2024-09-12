@@ -1,3 +1,4 @@
+// playControl.tsx
 import React, { useState } from 'react';
 import {
   PlayIcon,
@@ -27,17 +28,17 @@ const PlayControls: React.FC<PlayControlsProps> = ({
   const [speed, setSpeed] = useState<number>(1);
   const [isShuffle, setShuffle] = useState<boolean>(false);
 
-  // Toggle play/pause state
+  // play/pause state
   const handlePlayPause = () => {
     onPlayPauseToggle();
   };
 
-  // Toggle speed between 1x, 2x, and 3x
+  // speed between 1x, 2x, and 3x
   const handleSpeedToggle = () => {
     setSpeed((prevSpeed) => (prevSpeed === 3 ? 1 : prevSpeed + 1));
   };
 
-  // Toggle shuffle mode
+  // shuffle mode
   const handleShuffleToggle = () => {
     setShuffle((prevShuffle) => !prevShuffle);
   };
