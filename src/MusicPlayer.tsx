@@ -34,7 +34,7 @@ const MusicPlayer: React.FC = () => {
   };
 
   return (
-    <div className="music-player flex flex-col md:flex-row justify-between gap-8">
+    <div className="music-player flex flex-col md:flex-row justify-between gap-4">
       {/* Currently Playing Section */}
       <div className="w-[426px] h-[1043px] md:w-[436px] md:h-[662px]">
         {currentSong && <CurrentlyPlaying song={currentSong} />}
