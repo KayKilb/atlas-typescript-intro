@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import CurrentlyPlaying from './components/CurrentlyPlaying';
 import Playlist from './components/Playlist';
 
@@ -26,7 +26,7 @@ const MusicPlayer: React.FC = () => {
     fetchPlaylist();
   }, []);
 
-const getNextSong = useCallback(() => {
+  const getNextSong = useCallback(() => {
     if (playlist.length === 0) return null;
     const currentIndex = currentSong ? playlist.findIndex(song => song.id === currentSong.id) : -1;
     const nextIndex = (currentIndex + 1) % playlist.length;
