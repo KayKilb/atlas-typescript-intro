@@ -18,13 +18,14 @@ interface Song {
 }
 
 const Playlist: React.FC<PlaylistProps> = ({ playlist, currentSong, onSongSelect }) => {
+
   return (
     <div className="playlist space-y-2">
       {playlist.map((song) => (
         <PlayListItem
           key={song.id}
           song={song}
-          isSelected={currentSong?.id === song.id}
+          isSelected={currentSong ? currentSong.id === song.id : false}
           onClick={() => onSongSelect(song)}
         />
       ))}

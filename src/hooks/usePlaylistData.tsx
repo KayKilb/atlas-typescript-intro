@@ -7,6 +7,7 @@ interface Song {
   genre: string;
   length: string;
   cover: string;
+  artist: string;
 }
 
 export const usePlaylistData = () => {
@@ -33,3 +34,5 @@ export const usePlaylistData = () => {
 
   return { data, loading };
 };
+
+export default usePlaylistData

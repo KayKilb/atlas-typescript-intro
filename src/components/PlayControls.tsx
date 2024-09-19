@@ -12,7 +12,7 @@ interface PlayControlsProps {
   isPlaying: boolean;
   onPlayPauseToggle: () => void;
   onPrevious: () => void;
-  onNext: () => void;
+  onSkip: () => void;
   isFirstSong: boolean;
   isLastSong: boolean;
 }
@@ -21,7 +21,7 @@ const PlayControls: React.FC<PlayControlsProps> = ({
   isPlaying,
   onPlayPauseToggle,
   onPrevious,
-  onNext,
+  onSkip,
   isFirstSong,
   isLastSong
 }) => {
@@ -41,6 +41,12 @@ const PlayControls: React.FC<PlayControlsProps> = ({
   // shuffle mode
   const handleShuffleToggle = () => {
     setShuffle((prevShuffle) => !prevShuffle);
+  };
+
+  const handleSkip = () => {
+    if (!isLastSong) { // Only call onSkip if it's not the last song
+      onSkip();
+    }
   };
 
   return (
@@ -80,7 +86,7 @@ const PlayControls: React.FC<PlayControlsProps> = ({
         {/* Forward Button */}
         <button
           className="p-2 rounded-full bg-fuchsia-200 hover:bg-fuchsia-300"
-          onClick={onNext}
+          onClick={handleSkip}
           disabled={isLastSong}
         >
           <ForwardIcon
