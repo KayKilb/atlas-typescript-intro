@@ -31,10 +31,11 @@ const VolumeControl: React.FC<VolumeControlProps> = ({ value, onChange }) => {
 
       <div className="relative w-full">
         {/* Background track */}
-        <div className="absolute top-0 left-0 right-0 h-2 bg-[#FFE4FD] rounded-full"></div>
+        <div className="absolute top-2 left-0 right-0 h-2 bg-[#FFE4FD] rounded-full"></div>
+        
         {/* Progress track with gradient fuchsia */}
         <div
-          className="absolute top-0 left-0 h-2 rounded-full"
+          className="absolute top-2 left-0 h-2 rounded-full"
           style={{
             width: `${sliderValue}%`,
             background: `linear-gradient(to right, #FF66B2, #FF29EB)`,
@@ -54,7 +55,7 @@ const VolumeControl: React.FC<VolumeControlProps> = ({ value, onChange }) => {
         
         {/* Custom thumb styled with fuchsia */}
         <div
-          className="absolute w-[18px] h-[18px] bg-fuchsia-500 rounded-full shadow-md -top-[8px] left-0 transform"
+          className="absolute w-[18px] h-[18px] bg-fuchsia-500 rounded-full shadow-md top-1/2 left-0 transform -translate-y-1/2"
           style={{ left: `calc(${sliderValue}% - 9px)` }}
         ></div>
       </div>
